@@ -1,5 +1,7 @@
 AFRAME.registerComponent('init-scene', {
   init: function () {
+    console.log('hoge');
+
     var list = document.getElementById('me_parent').querySelectorAll('*');
 
     for (var i = 0; i < list.length; i++) {
@@ -14,11 +16,11 @@ AFRAME.registerComponent('init-scene', {
       elem.object3D.position.set(x, 0, y);
     }
 
-    var fuji = document.getElementById('fuji');
-    fuji.object3D.position.set(0, -10, 0)
-    setTimeout(() => {
-      fuji.setAttribute('animation', "property: object3D.position.y; from: -5; to: 0; dur: 4000; easing: easeOutCubic;");
-    }, 10000)
+    // var fuji = document.getElementById('fuji');
+    // fuji.object3D.position.set(0, -10, 0)
+    // setTimeout(() => {
+    //   fuji.setAttribute('animation', "property: object3D.position.y; from: -5; to: 0; dur: 4000; easing: easeOutCubic;");
+    // }, 10000)
   }
 });
 

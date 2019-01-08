@@ -1,19 +1,24 @@
 AFRAME.registerComponent('init-scene', {
   init: function () {
-    console.log('hoge');
+    const parent = document.getElementById('me_parent');
 
-    var list = document.getElementById('me_parent').querySelectorAll('*');
+    if (parent) {
+      console.log('parent');
 
-    for (var i = 0; i < list.length; i++) {
-      var elem = list[i];
-      // elem.object3D.position.set(i * 2, 0, 0);
-      const radius = 2.0;
-      const theta = i * Math.PI / (list.length - 1);
 
-      x = radius * Math.cos(theta);
-      y = radius * Math.sin(theta);
+      const list = parent.querySelectorAll('*');
 
-      elem.object3D.position.set(x, 0, y);
+      for (var i = 0; i < list.length; i++) {
+        var elem = list[i];
+        // elem.object3D.position.set(i * 2, 0, 0);
+        const radius = 2.0;
+        const theta = i * Math.PI / (list.length - 1);
+
+        x = radius * Math.cos(theta);
+        y = radius * Math.sin(theta);
+
+        elem.object3D.position.set(x, 0, y);
+      }
     }
 
     // var fuji = document.getElementById('fuji');

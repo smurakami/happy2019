@@ -5,9 +5,9 @@
     <title>3D Model (COLLADA)</title>
     <meta name="description" content="3D Model (COLLADA) — A-Frame">
     <script src="js/aframe-master.js"></script>
-<!--     <script src="js/ammo.js"></script>
+    <script src="js/ammo.js"></script>
     <script src="js/aframe-outline.min.js"></script>
- -->    <!-- <script src="js/a-mmd.js"></script> -->
+    <script src="js/a-mmd.js"></script>
     
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
 
@@ -26,14 +26,19 @@
       <!-- for AR Experiment -->
       <!-- <a-marker preset='custom' type='pattern' url='marker/pattern-marker.patt'> -->
       <a-marker preset='hiro'>
-        <a-entity id='fuji'>
+        <a-entity id='fuji' scale='0.6 0.6 0.6'>
           <a-obj-model src="#fuji-obj" mtl="#fuji-mtl"></a-obj-model>
         </a-entity>
 
         <!-- MMD Experiment -->
         <!-- <a-entity mmd="audio:https://cdn.rawgit.com/mrdoob/three.js/r87/examples/models/mmd/audios/wavefile_short.mp3; -->
         <!-- <a-entity mmd-model="model:https://cdn.rawgit.com/mrdoob/three.js/r87/examples/models/mmd/miku/miku_v2.pmd; -->
-        <a-entity id="me_parent" mmd="audioDelayTime:0; afterglow:2.0;" material="shader: flat; color: red;" init-scene>
+        <a-entity 
+          id="me_parent" 
+          mmd="audioDelayTime:0; afterglow:2.0;" 
+          material="shader: flat; color: red;" 
+          scale="0.6 0.6 0.6"
+          init-scene>
           <a-entity mmd-model="model:models/me/me.pmx;
                                vmd:vmds/wavefile_v2.vmd;
                                physics:false;"

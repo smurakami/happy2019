@@ -19,97 +19,44 @@
       <a-assets>
         <a-asset-item id="fuji-obj" src="models/fuji/fuji.obj"></a-asset-item>
         <a-asset-item id="fuji-mtl" src="models/fuji/fuji.mtl"></a-asset-item>
-        <a-asset-item id="hawk-gltf" src="models/hawk/Bird_01.gltf"></a-asset-item>
+        <a-asset-item id="hawk-gltf" src="models/hawk/wind_eagle.gltf"></a-asset-item>
         <a-asset-item id="eggplant-gltf" src="models/eggplant/EggPlant_01.gltf"></a-asset-item>
+        <a-asset-item id="sun-obj" src="models/sun/sun.obj"></a-asset-item>
+        <a-asset-item id="sun-mtl" src="models/sun/sun.mtl"></a-asset-item>
+        <img id="paper-jpg" src="images/paper.jpg"></img>
         <!-- <img id="sky" crossorigin="anonymous" src="https://cdn.rawgit.com/aframevr/aframe/v0.7.1/examples/primitives/models/peach-gradient.jpg"> -->
       </a-assets>
 
-      <a-entity id='fuji'>
+<!--       <a-entity id='fuji'>
         <a-obj-model src="#fuji-obj" mtl="#fuji-mtl"></a-obj-model>
       </a-entity>
+ -->
+
+      <a-image
+        id='paper'
+        src='#paper-jpg'
+      >
+      </a-image> 
 
       <a-entity id='hawks'>
-        <a-gltf-model 
-          src="#hawk-gltf"
-          scale="0.003 0.003 0.003"
-          position="2 3 0"
-        ></a-gltf-model>
       </a-entity>
 
       <a-entity id='eggplants' >
-        <a-gltf-model 
-          src="#eggplant-gltf" 
-          scale="0.01 0.01 0.01"
-          position="3 2 0"
-        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id='sun'>
+        <a-obj-model 
+          src="#sun-obj" 
+          mtl="#sun-mtl"
+          scale='10 0 10'
+          animation='property: rotation; from: 0 0 0; to: 0 360 0; dur: 15000; loop: true; easing: linear'
+        ></a-obj-model>
       </a-entity>
 
       <!-- MMD Experiment -->
-      <!-- <a-entity mmd="audio:https://cdn.rawgit.com/mrdoob/three.js/r87/examples/models/mmd/audios/wavefile_short.mp3; -->
-        <!-- <a-entity mmd-model="model:https://cdn.rawgit.com/mrdoob/three.js/r87/examples/models/mmd/miku/miku_v2.pmd; -->
-<!--       <a-entity id="me_parent" mmd="audioDelayTime:0; afterglow:2.0;" material="shader: flat; color: red;">
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
-        <a-entity mmd-model="model:models/me/me.pmx;
-                             vmd:vmds/wavefile_v2.vmd;
-                             physics:false;"
-                  shadow="cast:true"
-                  position="0 0 0"
-                  scale="0.03 0.03 0.03"></a-entity>
+      <a-entity id="dancers" mmd="audioDelayTime:0; afterglow:2.0;" material="shader: flat; color: red;">
       </a-entity>
- -->      
+      
       <a-entity position="0 0 4">
         <a-camera fov="60"></a-camera>
       </a-entity>

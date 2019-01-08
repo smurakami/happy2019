@@ -1,11 +1,15 @@
+
+var counter = 0;
 AFRAME.registerComponent('init-scene', {
   init: function () {
+    console.log('init-scene: ' + counter);
+    counter++;
     initEggplants();
     initHawks();
     initFuji();
-    // initDancer();
+    initDancer();
 
-    initPaper();
+    // initPaper();
   }
 });
 
@@ -18,10 +22,15 @@ function initPaper() {
 
   const ratio = height / width;
 
+  const scale = 1.1;
+
   node.setAttribute('width', 1);
   node.setAttribute('height', ratio);
   node.setAttribute('rotation', [-90, 0, 0].join(' '));
+  node.setAttribute('scale', [scale, scale, scale].join(' '));
+
   node.object3D.position.set(0, 0.0001, 0);
+
 }
 
 
@@ -39,7 +48,7 @@ function initEggplants() {
   for (var i = 0; i < 12; i++) {
     // var elem = list[i];
     // // elem.object3D.position.set(i * 2, 0, 0);
-    const radius = 1.8;
+    const radius = 1.5;
     const theta = i * Math.PI * 2 / circle_num;
 
     const x = radius * Math.cos(theta);
@@ -62,7 +71,6 @@ function initEggplants() {
 
     parent.appendChild(node);
   }
-
 }
 
 function initHawks() {
@@ -79,7 +87,7 @@ function initHawks() {
   for (var i = 0; i < 12; i++) {
     // var elem = list[i];
     // // elem.object3D.position.set(i * 2, 0, 0);
-    const radius = 1.3;
+    const radius = 1.0;
     const theta = i * Math.PI * 12 / circle_num;
 
     const x = radius * Math.cos(theta);
@@ -104,7 +112,7 @@ function initFuji() {
 function initDancer() {
   const parent = document.getElementById('dancers');
   if (parent) {
-    const circle_num = 10;
+    const circle_num = 5;
     for (var i = 0; i < circle_num; i++) {
       const node = document.createElement('a-entity');
 
@@ -125,7 +133,6 @@ function initDancer() {
       y = radius * Math.sin(theta);
 
       node.setAttribute('position', [x, 0, y].join(' '));
-
       parent.appendChild(node);
     }
   }

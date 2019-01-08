@@ -19,6 +19,8 @@
       <a-assets>
         <a-asset-item id="fuji-obj" src="models/fuji/fuji.obj"></a-asset-item>
         <a-asset-item id="fuji-mtl" src="models/fuji/fuji.mtl"></a-asset-item>
+        <a-asset-item id="hawk-gltf" src="models/hawk/Bird_01.gltf"></a-asset-item>
+        <a-asset-item id="eggplant-gltf" src="models/eggplant/EggPlant_01.gltf"></a-asset-item>
         <!-- <img id="sky" crossorigin="anonymous" src="https://cdn.rawgit.com/aframevr/aframe/v0.7.1/examples/primitives/models/peach-gradient.jpg"> -->
       </a-assets>
 
@@ -26,10 +28,26 @@
         <a-obj-model src="#fuji-obj" mtl="#fuji-mtl"></a-obj-model>
       </a-entity>
 
+      <a-entity id='hawks'>
+        <a-gltf-model 
+          src="#hawk-gltf"
+          scale="0.003 0.003 0.003"
+          position="2 3 0"
+        ></a-gltf-model>
+      </a-entity>
+
+      <a-entity id='eggplants' >
+        <a-gltf-model 
+          src="#eggplant-gltf" 
+          scale="0.01 0.01 0.01"
+          position="3 2 0"
+        ></a-gltf-model>
+      </a-entity>
+
       <!-- MMD Experiment -->
       <!-- <a-entity mmd="audio:https://cdn.rawgit.com/mrdoob/three.js/r87/examples/models/mmd/audios/wavefile_short.mp3; -->
         <!-- <a-entity mmd-model="model:https://cdn.rawgit.com/mrdoob/three.js/r87/examples/models/mmd/miku/miku_v2.pmd; -->
-      <a-entity id="me_parent" mmd="audioDelayTime:0; afterglow:2.0;" material="shader: flat; color: red;">
+<!--       <a-entity id="me_parent" mmd="audioDelayTime:0; afterglow:2.0;" material="shader: flat; color: red;">
         <a-entity mmd-model="model:models/me/me.pmx;
                              vmd:vmds/wavefile_v2.vmd;
                              physics:false;"
@@ -91,7 +109,7 @@
                   position="0 0 0"
                   scale="0.03 0.03 0.03"></a-entity>
       </a-entity>
-      
+ -->      
       <a-entity position="0 0 4">
         <a-camera fov="60"></a-camera>
       </a-entity>

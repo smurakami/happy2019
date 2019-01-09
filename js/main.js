@@ -1,7 +1,12 @@
-
 var counter = 0;
 AFRAME.registerComponent('init-scene', {
   init: function () {
+    if (!window.location.href.match("ar.html")) {
+      setTimeout(() => {
+        window.location.href += 'ar.html';
+      }, 5000);
+    }
+
     console.log('init-scene: ' + counter);
     counter++;
     initEggplants();
